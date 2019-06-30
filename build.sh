@@ -49,12 +49,14 @@ echo "Build"
 $make || exit $?
 
 # Generate `.wasm` files
+OPTIONS="-s ALLOW_MEMORY_GROWTH=1 -s TOTAL_MEMORY=536870912 -s USE_LIBPNG=1"
+
 echo "Link"
 mv examples/cwebp examples/cwebp.o
-emcc examples/cwebp.o -o ../cwebp.wasm -s USE_LIBPNG=1 || exit $?
+emcc examples/cwebp.o -o ../cwebp.wasm $OPTIONS || exit $?
 
 mv examples/dwebp examples/dwebp.o
-emcc examples/dwebp.o -o ../dwebp.wasm -s USE_LIBPNG=1 || exit $?
+emcc examples/dwebp.o -o ../dwebp.wasm $OPTIONS || exit $?
 
 echo "Clean"
 cd ..
