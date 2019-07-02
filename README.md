@@ -6,10 +6,10 @@ WebP lossless images are 26% smaller in size compared to PNGs. WebP lossy images
 
 Lossless WebP supports transparency (also known as alpha channel) at a cost of just 22% additional bytes. For cases when lossy RGB compression is acceptable, lossy WebP also supports transparency, typically providing 3× smaller file sizes compared to PNG.
 
-You can install webp with:
+You can install webp commands globally with:
 
 ```shell
-wapm install webp
+wapm install -g webp
 ```
 
 ## Commands
